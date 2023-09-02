@@ -1,6 +1,7 @@
 import numpy as np
 import pygame
 import math
+from time import sleep
 
 BLUE = (0, 0, 255)
 BLACK = (0, 0, 0)
@@ -130,6 +131,7 @@ while running:
                         winning_label = winning_font.render(
                             "Player 1 Won!!", 1, RED)
                         screen.blit(winning_label, (30, 10))
+                        
                         running = False
 
             else:
@@ -149,4 +151,6 @@ while running:
 
             turn = (turn+1) % 2
             draw_board(board)
+            if running==False: 
+                sleep(1)
             draw_circle_on_mouse(event)
